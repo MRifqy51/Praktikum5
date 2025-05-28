@@ -5,6 +5,7 @@ use App\Http\Controllers\ListProductController;
 use App\Http\Controllers\ListProdukController;
 
 Route::get('listproduk', [ListProdukController::class, 'show'] );
+Route::post('listproduk', [ListProdukController::class, 'simpan'] )->name('produk.simpan');
 
 Route::get('/', function () {
     return view('welcome');
