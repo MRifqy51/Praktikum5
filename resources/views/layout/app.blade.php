@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Laravel App')</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>@yield('title', 'Laravel App')</title>
+  
+  <!-- Tailwind CSS CDN (pastikan versi dan sumber sesuai kebutuhan) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Vite JS -->
+  @vite('resources/js/app.js')
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-    <link href="styles/flowbite.min.css" rel="stylesheet" />
-    <script src="styles/flowbite.min.js"></script>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
 
-    <!-- Navbar -->
-    @include('components.menu')
+<body>
+  <!-- Navbar atau komponen lain bisa ditempatkan di sini jika perlu -->
+  
+  <!-- Konten utama akan ditampilkan di sini -->
+  @yield('content')
 
-    <!-- Main Content -->
-    <main class="container mx-auto mt-10 px-4">
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-xl font-semibold mb-4">@yield('page_title', 'Judul Halaman')</h2>
-            @yield('content')
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="mt-10 text-center text-sm text-gray-500 py-4 border-t">
-        &copy; {{ date('Y') }} Laravel APP. All rights reserved.
-    </footer>
-
+  <!-- Tambahkan JS tambahan jika perlu -->
 </body>
+
 </html>
